@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SixPackX — A live glass cockpit for iPad</title>
+  <meta name="description" content="Turn your iPad into a live glass-cockpit panel — G5 PFD, HSI, and engine display driven by your flight simulator over Wi-Fi.">
+  <meta property="og:title" content="SixPackX — A live glass cockpit for iPad">
+  <meta property="og:description" content="G5 PFD, HSI, and engine display driven by your flight simulator over Wi-Fi.">
+  <meta property="og:image" content="assets/hero.png">
+  <meta property="og:type" content="website">
+  <style>
+    :root{
+      --bg:#0b0d10; --panel:#15181d; --line:#262b33;
+      --ink:#eef2f7; --muted:#9aa4b2; --cyan:#75f6fb; --green:#19a921;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; background:var(--bg); color:var(--ink);
+      font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      -webkit-font-smoothing:antialiased;
+    }
+    .wrap{max-width:1080px; margin:0 auto; padding:0 24px}
+    a{color:var(--cyan); text-decoration:none}
+    header{padding:28px 0; border-bottom:1px solid var(--line)}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.06em; font-size:20px}
+    .dot{width:14px; height:14px; border-radius:50%; background:var(--cyan); box-shadow:0 0 18px var(--cyan)}
+
+    .hero{display:grid; grid-template-columns:1.05fr 1.35fr; gap:48px; align-items:center; padding:72px 0}
+    .hero h1{font-size:46px; line-height:1.08; margin:0 0 18px; letter-spacing:-.01em}
+    .hero p.lead{font-size:19px; color:var(--muted); margin:0 0 28px}
+    .hero img{width:100%; border:1px solid var(--line); border-radius:14px; box-shadow:0 30px 80px rgba(0,0,0,.5)}
+    .badge{display:inline-block; padding:6px 12px; border:1px solid var(--line); border-radius:999px;
+      color:var(--muted); font-size:13px; letter-spacing:.04em; margin-bottom:22px}
+    .cta{display:inline-flex; align-items:center; gap:10px; background:var(--cyan); color:#04212a;
+      font-weight:700; padding:13px 22px; border-radius:10px}
+    .cta.secondary{background:transparent; color:var(--ink); border:1px solid var(--line)}
+    .ctas{display:flex; gap:14px; flex-wrap:wrap}
+
+    section{padding:64px 0; border-top:1px solid var(--line)}
+    h2{font-size:30px; letter-spacing:-.01em; margin:0 0 8px}
+    .sub{color:var(--muted); margin:0 0 36px; max-width:60ch}
+    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+    .card{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:22px}
+    .card h3{margin:0 0 8px; font-size:17px}
+    .card p{margin:0; color:var(--muted); font-size:15px}
+    .k{color:var(--cyan)}
+
+    .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    .gallery img{width:100%; border:1px solid var(--line); border-radius:12px}
+
+    footer{padding:40px 0 64px; color:var(--muted); border-top:1px solid var(--line); font-size:14px}
+    @media (max-width:820px){
+      .hero{grid-template-columns:1fr; padding:48px 0; gap:32px}
+      .hero h1{font-size:36px}
+      .grid,.gallery{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap brand"><span class="dot"></span> SIXPACKX</div>
+  </header>
+
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <span class="badge">For iPad · flight-sim companion</span>
+        <h1>Your iPad, as a live glass cockpit.</h1>
+        <p class="lead">A full-screen glass panel — Garmin-style PFD, HSI, and engine display — driven in real time by your flight simulator over Wi-Fi.</p>
+        <div class="ctas">
+          <a class="cta" href="#features">See the instruments</a>
+          <a class="cta secondary" href="#how">How it works</a>
+        </div>
+      </div>
+      <img src="assets/hero.png" alt="SixPackX glass cockpit running on iPad">
+    </div>
+  </div>
+
+  <section id="features">
+    <div class="wrap">
+      <h2>Six instruments, one panel</h2>
+      <p class="sub">Everything updates live as you fly — smooth needles, scrolling tapes, and rolling digit drums.</p>
+      <div class="grid">
+        <div class="card"><h3 class="k">G5 PFD</h3><p>Attitude with pitch ladder &amp; roll arc, airspeed and altitude tapes, heading tape, VSI, slip/skid ball, baro and selected-altitude bug.</p></div>
+        <div class="card"><h3 class="k">HSI</h3><p>Rotating compass rose with heading bug, ground track and desired track, distance to waypoint, and wind direction &amp; speed.</p></div>
+        <div class="card"><h3 class="k">Engine Display</h3><p>RPM, fuel quantity &amp; flow, oil pressure and temperature, CHT, battery amps/volts, and outside air temperature.</p></div>
+        <div class="card"><h3 class="k">Airspeed</h3><p>Color-banded indicator with the V-speed arcs for your aircraft.</p></div>
+        <div class="card"><h3 class="k">Turn Coordinator</h3><p>Standard-rate turn with an inclinometer ball.</p></div>
+        <div class="card"><h3 class="k">Vertical Speed</h3><p>Fixed-scale climb/descent indicator with a moving pointer.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <p class="sub">A small plugin streams telemetry from your simulator to the iPad. No cables, no setup screens to wrestle with.</p>
+      <div class="grid">
+        <div class="card"><h3>1 · Install the plugin</h3><p>Drop the included server plugin into your flight simulator.</p></div>
+        <div class="card"><h3>2 · Open the app</h3><p>SixPackX auto-discovers the simulator on your local Wi-Fi network — no IP typing required.</p></div>
+        <div class="card"><h3>3 · Fly</h3><p>The panel comes alive with live attitude, speed, altitude, engine and navigation data.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>A closer look</h2>
+      <p class="sub">Running full-screen on iPad.</p>
+      <div class="gallery">
+        <img src="assets/shot1.png" alt="SixPackX screenshot">
+        <img src="assets/shot2.png" alt="SixPackX screenshot">
+        <img src="assets/shot3.png" alt="SixPackX screenshot">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">© <span id="y"></span> SixPackX. Not affiliated with Garmin Ltd. Aircraft instrument styling for simulation use only.</div>
+  </footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
